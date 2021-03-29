@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up| Listify{% endblock  %}
+{% block body %}
+<div class="w-25 container mb-6 pb-6" >
+    <h3 class="fs-2 pb-3 text-center fw-bold" >Please Sign Up</h1>
+    <form action="/signup" method="POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input name='email' placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Name</label>
+            <input name='name' placeholder="Name" type="name" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input name='password1' placeholder="Password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+            <input name='password2' placeholder="Confirm password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+{% block footer %}
+  <footer>
+    <div class="bg-primary align-bottom  text-white text-center p-4">
+      <p>
+        © Copyright<a href="https://manzumrahman.github.io"><strong> Listify</strong></a>. All Rights Reserved
+      </p>
+      <p>
+        Made with ❤ by <a href="https://manzumrahman.github.io"><strong>Manzum Rahman</strong></a>
+      </p>
+
+    </div>
+  </footer>
+  {% endblock  %}

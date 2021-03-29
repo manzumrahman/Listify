@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <h2 class="fs-2 pb-2">Add A Task</h2>
+        <form action="/app" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Task Title</label>
+                <input name="title" type="text" class="form-control" id="title" />
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Task Description</label>
+                <input name="description" type="text" class="form-control" id="desc" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container my-3 pb-5">
+        <h2 class="fs-2 pb-2">My Tasks</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date created</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if user.tasks|length == 0 %}
+                <div class="alert alert-primary" role="alert">
+                    No Task Found. Add your first Task Now!
+                </div>
+                {% else %}
+                {% for task in user.tasks %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{task.title}}</td>
+                    <td>{{task.description}}</td>
+                    <td>{{task.date_created}}</td>
+                    <td>
+                        <a href="/update/{{task.serial}}" type="button" class="btn btn-outline-success">Update</a>
+                        <a href="/delete/{{task.serial}}" type="button" class="btn btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h2 class="fs-2 pb-2">Update A Task</h2>
+    <form action="/update/{{task.serial}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Task Title</label>
+            <input name="title" value="{{task.title}}" type="text" class="form-control" id="title" />
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Task Description</label>
+            <input name="description" value="{{task.description}}" type="text" class="form-control" id="desc" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock  %}
+{% block footer %}
+  <footer>
+    <div class="bg-primary align-bottom  text-white text-center p-4">
+      <p>
+        © Copyright<a href="https://manzumrahman.github.io"><strong> Listify</strong></a>. All Rights Reserved
+      </p>
+      <p>
+        Made with ❤ by <a href="https://manzumrahman.github.io"><strong>Manzum Rahman</strong></a>
+      </p>
+
+    </div>
+  </footer>
+  {% endblock  %}
