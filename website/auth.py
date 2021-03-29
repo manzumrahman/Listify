@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect
 from .models import User
 from . import db
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
@@ -50,6 +50,7 @@ def login():
                 flash("Wrong Password, Try again.", 'danger')
         else:
             flash("Email doesn't exist", 'danger')
+            print(current_user)
     return render_template('login.html', user=current_user)
 
 
