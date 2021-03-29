@@ -14,11 +14,11 @@
       </p>
       <div class=" justify-center">
         {% if user.is_authenticated %}
-        <button href='/app' class="btn btn-lg btn-primary">Logout</button>
+        <button href='/logout' class="btn btn-lg btn-primary">Logout</button>
         <button href='/app' class="btn btn-lg btn-outline-primary">Open App</button>
         {% else %}
-        <button href='/app' class="btn btn-lg btn-primary">Signup</button>
-        <button href='/app' class="btn btn-lg btn-outline-primary">login</button>
+        <button href='/signup' class="btn btn-lg btn-primary">Signup</button>
+        <button href='/login' class="btn btn-lg btn-outline-primary">login</button>
         {% endif %}
       </div>
     </div>
