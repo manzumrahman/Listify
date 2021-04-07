@@ -7,7 +7,7 @@
 
 
 ## Usage
-### Clone this repositary and run the following code
+### Clone this repository and run the following code
  ```bash:
 pip install requirements.txt
 python app.py
