@@ -10,6 +10,7 @@ app.secret_key = 'Secret_key'
 db.__init__(app)
 
 
+
 def create_app():
     from .views import views
     from .auth import auth
@@ -18,6 +19,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/")
 
     from .models import User, Tasks
+    db.create_all()
 
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
