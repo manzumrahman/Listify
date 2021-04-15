@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\website\models.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\website\templates\index.html">
           <value>
             <Attribute>

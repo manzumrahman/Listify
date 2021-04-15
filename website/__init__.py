@@ -4,16 +4,14 @@ from flask_login import LoginManager
 from os import path
 
 db = flask_sqlalchemy.SQLAlchemy()
+app = flask.Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/listify-todo'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'Secret_key'
+db.__init__(app)
 
 
 def create_app():
-
-    app = flask.Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.secret_key = 'Secret_key'
-    db.__init__(app)
-
     from .views import views
     from .auth import auth
 
