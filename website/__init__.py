@@ -4,7 +4,7 @@ from flask_login import LoginManager
 
 db = flask_sqlalchemy.SQLAlchemy()
 app = flask.Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/listify-todo'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/listify-todo'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'Secret_key'
 db.__init__(app)
