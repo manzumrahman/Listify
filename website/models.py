@@ -11,10 +11,9 @@ class Tasks(db.Model):
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    def __init__(self, serial, title, description, date_created, user_id):
+    def __init__(self, title, description, user_id):
         self.title = title
         self.description = description
-        self.date_created = date_created
         self.user_id = user_id
 
     def __repr__(self):
