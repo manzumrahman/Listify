@@ -1,4 +1,4 @@
-# Listify-Todo
+# Listify
 
 ### This is a todo list app that I have made with Flask.
 
