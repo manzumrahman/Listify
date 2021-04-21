@@ -2,11 +2,10 @@ import flask
 import flask_sqlalchemy
 from flask_login import LoginManager
 
-db = flask_sqlalchemy.SQLAlchemy()
 app = flask.Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'Secret_key'
-db.__init__(app)
+db = flask_sqlalchemy.SQLAlchemy(app)
 
 
 def create_app(database_uri):
