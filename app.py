@@ -1,7 +1,8 @@
 from website import create_app
-from dotenv import dotenv_values
+import os
 
-database_uri = dotenv_values(".env")["DATABASE_URI"]
+database_uri = os.environ.get('DATABASE_URL')
+print(database_uri)
 app = create_app(database_uri=database_uri)
 
 if __name__ == '__main__':
