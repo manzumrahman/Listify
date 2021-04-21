@@ -5,7 +5,7 @@ import os
 try:
     DATABASE_URI = dotenv_values(".env")["DATABASE_URL"]
 except:
-    DATABASE_URI = os.environ.get('DATABASE_URL')
+    DATABASE_URI = "postgresql://"+os.environ.get('DATABASE_URL')[11:]
 
 
 print(DATABASE_URI)
